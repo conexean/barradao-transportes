@@ -48,7 +48,7 @@ export default class UserRepository {
 
       return user ? new User(user) : null;
     } catch (error) {
-      throw new Error('Erro na comunicação com banco de dados');
+      throw new Error(error.message);
     }
   }
 
