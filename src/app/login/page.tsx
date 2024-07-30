@@ -8,6 +8,7 @@ export default function Home() {
         <div className='flex flex-col gap-y-3'>
           <h3 className='mt-3 text-center text-xl font-medium text-gray-600'>
             Bem vindo de volta
+            {process.env.SECRETKEY as string}
           </h3>
 
           <p className='mt-1 text-center text-gray-500'>Faça login</p>
