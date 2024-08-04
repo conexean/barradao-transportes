@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "eslint . --ext .ts,.tsx --fix && prettier --write . && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma:migrate": "prisma migrate deploy"
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",
