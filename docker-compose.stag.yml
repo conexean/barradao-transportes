@@ -2,7 +2,7 @@ services:
   barradao-transportes-full-stack:
     image: conexean/barradao-transportes:staging
     ports:
-      - "3002:3000"
+      - "3002:3002"
     restart: always
     container_name: barradao-transportes-full-stack
     env_file:

@@ -13,7 +13,7 @@ RUN npm install
 # Copiar o restante dos arquivos da aplicação
 COPY . .
 
-# Gerar o Prisma
+# Gerar o Prisma Client
 RUN npx prisma generate
 
 # Construir a aplicação Next.js
@@ -31,6 +31,9 @@ COPY --from=build /app/public ./public
 COPY --from=build /app/.next ./.next
 COPY --from=build /app/package.json ./
 COPY --from=build /app/package-lock.json ./
+COPY --from=build /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=build /app/node_modules/@prisma ./node_modules/@prisma
+COPY --from=build /app/prisma ./prisma
 
 # Instalar apenas as dependências de produção
 RUN npm install --only=production
@@ -39,7 +42,7 @@ RUN npm install --only=production
 ENV NODE_ENV=production
 
 # Expor a porta que a aplicação irá rodar
-EXPOSE 3000
+EXPOSE 3002
 
 # Comando para iniciar a aplicação
-CMD ["npm", "start"]
+CMD ["npm", "start", "--", "-p", "3002"]
