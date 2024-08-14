@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Link from 'next/link';
 import Icon from './icon';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface PaginationProps {
   totalPages: number; // Total de páginas disponíveis
@@ -9,7 +9,19 @@ interface PaginationProps {
 }
 
 const Pagination: React.FC<PaginationProps> = ({ totalPages, page }) => {
+  const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams],
+  );
 
   const pageNumbers: number[] = [];
 
@@ -46,14 +58,14 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, page }) => {
       {page > 1 ? (
         <div className='flex space-x-2'>
           <Link
-            href={`/usuarios?page=1`}
+            href={pathname + '?' + createQueryString('page', '1')}
             scroll={false}
             className='flex select-none items-center gap-x-2 rounded-md border bg-white px-5 py-2 text-sm capitalize text-gray-700 transition-colors duration-200 hover:bg-gray-100 lg:hidden'
           >
             Início
           </Link>
           <Link
-            href={`/usuarios?page=${page - 1}`}
+            href={pathname + '?' + createQueryString('page', `${page - 1}`)}
             scroll={false}
             className='flex select-none items-center gap-x-2 rounded-md border bg-white px-5 py-2 text-sm capitalize text-gray-700 transition-colors duration-200 hover:bg-gray-100'
           >
@@ -80,7 +92,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, page }) => {
               </span>
             )}
             <Link
-              href={`/usuarios?page=${number}`}
+              href={pathname + '?' + createQueryString('page', `${number}`)}
               scroll={false}
               className={`mx-1 flex select-none items-center rounded-md px-4 py-2 transition-colors duration-300 ${
                 page === number
@@ -97,14 +109,14 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, page }) => {
       {page < totalPages ? (
         <div className='flex space-x-2'>
           <Link
-            href={`/usuarios?page=`}
+            href={pathname + '?' + createQueryString('page', `${page + 1}`)}
             scroll={false}
             className='flex select-none items-center gap-x-2 rounded-md border bg-white px-5 py-2 text-sm capitalize text-gray-700 transition-colors duration-200 hover:bg-gray-100'
           >
             <Icon name='next' width={22} height={22} />
           </Link>
           <Link
-            href={`/usuarios?page=${totalPages}`}
+            href={pathname + '?' + createQueryString('page', `${totalPages}`)}
             scroll={false}
             className='flex select-none items-center gap-x-2 rounded-md border bg-white px-5 py-2 text-sm capitalize text-gray-700 transition-colors duration-200 hover:bg-gray-100 lg:hidden'
           >

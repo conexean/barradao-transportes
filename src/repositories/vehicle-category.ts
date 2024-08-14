@@ -1,6 +1,6 @@
 import { VehicleCategoryInterface } from '@/interfaces/models-interface/vehicle-category';
 import prisma from '@/lib/prisma';
-import VehicleCategory from '@/models/vehicle-category';
+import VehicleCategory, { IVechicleCategory } from '@/models/vehicle-category';
 
 export default class VehicleCategoryRepository {
   async getAllVehiclesCategories(
@@ -17,7 +17,7 @@ export default class VehicleCategoryRepository {
       });
 
       return vehicleCatories.map(
-        (vehicleCategory) => new VehicleCategory(vehicleCategory),
+        (vehicleCategory: IVechicleCategory) => new VehicleCategory(vehicleCategory),
       );
     } catch (error: any) {
       throw new Error(error.message);

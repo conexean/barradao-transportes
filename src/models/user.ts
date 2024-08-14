@@ -1,6 +1,6 @@
 import { UserInterface } from '@/interfaces/models-interface/user-interface';
 
-interface IUser extends UserInterface {
+export interface IUser extends UserInterface {
   id: number;
   active: boolean;
 }

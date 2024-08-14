@@ -1,6 +1,6 @@
 import { UserInterface } from '@/interfaces/models-interface/user-interface';
 import prisma from '@/lib/prisma';
-import User from '@/models/user';
+import User, { IUser } from '@/models/user';
 
 export default class UserRepository {
   async getAllUsers(validPage: number, pageSize: number): Promise<User[]> {
@@ -13,7 +13,7 @@ export default class UserRepository {
         },
       });
 
-      return users.map((user) => new User(user));
+      return users.map((user: IUser) => new User(user));
     } catch (error: any) {
       throw new Error(error.message);
     }

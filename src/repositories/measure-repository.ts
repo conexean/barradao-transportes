@@ -1,6 +1,6 @@
 import { MeasureInterface } from '@/interfaces/models-interface/measure-interace';
 import prisma from '@/lib/prisma';
-import Measure from '@/models/measure';
+import Measure, { IMeasure } from '@/models/measure';
 
 export default class MeasureRepository {
   async getAllMeasure(validPage: number, pageSize: number): Promise<Measure[]> {
@@ -13,7 +13,7 @@ export default class MeasureRepository {
         },
       });
 
-      return measures.map((measure) => new Measure(measure));
+      return measures.map((measure: IMeasure) => new Measure(measure));
     } catch (error: any) {
       throw new Error(error.message);
     }

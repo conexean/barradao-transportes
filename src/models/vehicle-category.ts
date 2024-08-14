@@ -1,6 +1,6 @@
 import { VehicleCategoryInterface } from '@/interfaces/models-interface/vehicle-category';
 
-interface IVechicleCategory extends VehicleCategoryInterface {
+export interface IVechicleCategory extends VehicleCategoryInterface {
   id: number;
   active: boolean;
 }

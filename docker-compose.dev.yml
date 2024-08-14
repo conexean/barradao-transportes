@@ -4,7 +4,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=mysql://user:password@db:3306/database
+      - DATABASE_URL=postgresql://user:password@db:5432/database
       - SECRETKEY=${SECRETKEY}
       - SESSION_AUTH_NAME=${SESSION_AUTH_NAME}
     volumes:
@@ -13,11 +13,10 @@ services:
       - db
 
   db:
-    image: mysql:8.0
+    image: postgres:13
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: database
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      POSTGRES_DB: database
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
     ports:
-      - "3306:3306"
+      - "5432:5432"

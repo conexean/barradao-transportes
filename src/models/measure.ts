@@ -1,6 +1,6 @@
 import { MeasureInterface } from '@/interfaces/models-interface/measure-interace';
 
-interface IMeasure extends MeasureInterface {
+export interface IMeasure extends MeasureInterface {
   id: number;
   active: boolean;
 }
