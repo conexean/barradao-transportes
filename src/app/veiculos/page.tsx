@@ -1,32 +1,17 @@
-import Breadcrumb from '@/components/breadcrumb';
-import Button from '@/components/button';
-import BreadcrumbInterface from '@/interfaces/breadcrumb-interface';
-import Link from 'next/link';
+import Maintenance from '@/ui/components/maintenance';
+import PageLayout from '@/ui/layouts/page-layout';
 
-const Veiculos: React.FC = () => {
-  const breadcrumbProps: BreadcrumbInterface = {
-    title: 'Veículos',
-    links: [
-      {
-        label: 'Veículos',
-        href: '/veiculos',
-        active: true,
-      },
-    ],
-  };
-
+const VeiculosPage: React.FC = () => {
   return (
-    <>
-      <Breadcrumb title={breadcrumbProps.title} links={breadcrumbProps.links} />
-      <div className='flex items-center justify-end'>
-        <Link href={'/veiculos/cadastrar'}>
-          <Button color='blue' type='button'>
-            Novo veiculo
-          </Button>
-        </Link>
-      </div>
-    </>
+    <PageLayout
+      title='Veículos'
+      showBackButton={false}
+      showRegisterButton={true}
+      href='/veiculos/cadastrar'
+    >
+      <Maintenance />
+    </PageLayout>
   );
 };
 
-export default Veiculos;
+export default VeiculosPage;

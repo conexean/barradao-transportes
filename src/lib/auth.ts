@@ -1,4 +1,4 @@
-import AuthInterface from '@/interfaces/auth-session-interface';
+import AuthInterface from '@/application/interfaces/auth-session-interface';
 import UserService from '@/services/user-service';
 import { SignJWT, jwtVerify } from 'jose';
 import bcrypt from 'bcrypt';

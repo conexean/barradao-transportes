@@ -1,6 +1,6 @@
 'use client';
 
-import ActiveContextInterface from '@/interfaces/active-context-interface';
+import ActiveContextInterface from '@/application/interfaces/active-context-interface';
 import { ReactNode, createContext, useState } from 'react';
 
 export const ActiveContext = createContext({} as ActiveContextInterface);

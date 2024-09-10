@@ -1,6 +1,6 @@
 'use client';
 
-import ModalContextInterface from '@/interfaces/modal-context-interface';
+import ModalContextInterface from '@/application/interfaces/modal-context-interface';
 import { ReactNode, createContext, useState } from 'react';
 
 export const ModalContext = createContext({} as ModalContextInterface);

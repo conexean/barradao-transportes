@@ -1,24 +1,17 @@
-import Breadcrumb from '@/components/breadcrumb';
-import Button from '@/components/button';
-import BreadcrumbInterface from '@/interfaces/breadcrumb-interface';
-import DefaultLayout from '@/layouts/default-layout';
-import Link from 'next/link';
+import Maintenance from '@/ui/components/maintenance';
+import DefaultLayout from '@/ui/layouts/default-layout';
+import PageLayout from '@/ui/layouts/page-layout';
 
 export default function Home() {
-  const breadcrumbProps: BreadcrumbInterface = {
-    title: 'Passo a passo',
-    links: [
-      {
-        label: 'Home',
-        href: '/',
-        active: true,
-      },
-    ],
-  };
-
   return (
     <DefaultLayout>
-      <Breadcrumb title={breadcrumbProps.title} links={breadcrumbProps.links} />
+      <PageLayout
+        title='Passo a passo'
+        showBackButton={false}
+        showRegisterButton={false}
+      >
+        <Maintenance />
+      </PageLayout>
     </DefaultLayout>
   );
 }

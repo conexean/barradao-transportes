@@ -1,4 +1,4 @@
-import { MeasureInterface } from '@/interfaces/models-interface/measure-interace';
+import { MeasureInterface } from '@/application/interfaces/models-interface/measure-interace';
 import Measure from '@/models/measure';
 import MeasureRepository from '@/repositories/measure-repository';
 import { ValidationError } from '@/utils/validtion-error';

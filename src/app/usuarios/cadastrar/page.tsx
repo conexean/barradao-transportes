@@ -1,38 +1,12 @@
-import Section from '@/components/section';
-import BreadcrumbInterface from '@/interfaces/breadcrumb-interface';
-import Breadcrumb from '@/components/breadcrumb';
-import createUser from '@/actions/user/createUser';
-import FormCreateUser from '@/components/forms/form-create-user';
+import FormCreateUser from '@/ui/components/forms/user/form-create-user';
+import PageLayout from '@/ui/layouts/page-layout';
 
-const CadastrarUsuario: React.FC = () => {
-  const breadcrumbProps: BreadcrumbInterface = {
-    title: 'Cadastrar usuários',
-    links: [
-      {
-        label: 'Usuários',
-        href: '/usuarios',
-        active: false,
-      },
-      {
-        label: 'Cadastrar usuários',
-        href: '/usuarios/cadastrar',
-        active: true,
-      },
-    ],
-  };
+const CadastrarUsuarioPage: React.FC = () => {
   return (
-    <>
-      <Section>
-        <Breadcrumb
-          title={breadcrumbProps.title}
-          links={breadcrumbProps.links}
-        />
-        <div>
-          <FormCreateUser action={createUser} />
-        </div>
-      </Section>
-    </>
+    <PageLayout title='Cadastrar usuário' showRegisterButton={false}>
+      <FormCreateUser />
+    </PageLayout>
   );
 };
 
-export default CadastrarUsuario;
+export default CadastrarUsuarioPage;

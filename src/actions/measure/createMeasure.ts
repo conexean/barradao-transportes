@@ -1,7 +1,7 @@
 'use server';
 
 import formatError from '@/constants/format-error';
-import { MeasureInterface } from '@/interfaces/models-interface/measure-interace';
+import { MeasureInterface } from '@/application/interfaces/models-interface/measure-interace';
 import measureSchema from '@/schemas/measure-schema';
 import MeasureService from '@/services/measure-service';
 import { SubmitFormAction } from '@/types/form-types';

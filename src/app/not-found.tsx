@@ -1,5 +1,5 @@
-import Button from '@/components/button';
-import Container from '@/components/container';
+import Button from '@/ui/components/button';
+import Container from '@/ui/components/container';
 import Link from 'next/link';
 
 const Custom404: React.FC = () => {

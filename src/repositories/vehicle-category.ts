@@ -1,4 +1,4 @@
-import { VehicleCategoryInterface } from '@/interfaces/models-interface/vehicle-category';
+import { VehicleCategoryInterface } from '@/application/interfaces/models-interface/vehicle-category';
 import prisma from '@/lib/prisma';
 import VehicleCategory, { IVechicleCategory } from '@/models/vehicle-category';
 

@@ -1,7 +1,7 @@
 'use server';
 
 import formatError from '@/constants/format-error';
-import { VehicleCategoryInterface } from '@/interfaces/models-interface/vehicle-category';
+import { VehicleCategoryInterface } from '@/application/interfaces/models-interface/vehicle-category';
 import vehicleCategorySchema from '@/schemas/vehicle-category-schema';
 import VehicleCategoryService from '@/services/vehicle-category-service';
 import { SubmitFormAction } from '@/types/form-types';

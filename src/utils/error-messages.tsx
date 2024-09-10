@@ -1,6 +1,6 @@
 'use client';
 
-import FieldErrors from '@/interfaces/field-erros-interface';
+import FieldErrors from '@/application/interfaces/field-erros-interface';
 import React from 'react';
 
 const ErrorMessages = ({ fieldErrors }: { fieldErrors: FieldErrors }) => {

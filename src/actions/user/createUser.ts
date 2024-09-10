@@ -1,7 +1,7 @@
 'use server';
 
 import formatError from '@/constants/format-error';
-import { UserInterface } from '@/interfaces/models-interface/user-interface';
+import { UserInterface } from '@/application/interfaces/models-interface/user-interface';
 import userSchema from '@/schemas/user-schema';
 import UserService from '@/services/user-service';
 import { SubmitFormAction } from '@/types/form-types';

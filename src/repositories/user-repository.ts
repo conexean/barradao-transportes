@@ -1,4 +1,4 @@
-import { UserInterface } from '@/interfaces/models-interface/user-interface';
+import { UserInterface } from '@/application/interfaces/models-interface/user-interface';
 import prisma from '@/lib/prisma';
 import User, { IUser } from '@/models/user';
 

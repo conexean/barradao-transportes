@@ -1,4 +1,4 @@
-import { UserInterface } from '@/interfaces/models-interface/user-interface';
+import { UserInterface } from '@/application/interfaces/models-interface/user-interface';
 import User from '@/models/user';
 import UserRepository from '@/repositories/user-repository';
 import { ValidationError } from '@/utils/validtion-error';

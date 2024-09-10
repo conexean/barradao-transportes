@@ -1,4 +1,4 @@
-import { VehicleCategoryInterface } from '@/interfaces/models-interface/vehicle-category';
+import { VehicleCategoryInterface } from '@/application/interfaces/models-interface/vehicle-category';
 import VehicleCategory from '@/models/vehicle-category';
 import VehicleCategoryRepository from '@/repositories/vehicle-category';
 import { ValidationError } from '@/utils/validtion-error';

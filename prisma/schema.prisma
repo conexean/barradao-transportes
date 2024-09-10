@@ -18,7 +18,6 @@ model User {
   name       String
   lastname   String
   email      String   @unique
-  username   String   @unique
   password   String
   active     Boolean  @default(true)
   createdAt  DateTime @default(now())

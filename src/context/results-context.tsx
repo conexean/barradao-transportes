@@ -1,6 +1,6 @@
 'use client';
 
-import ResultsContextInterface from '@/interfaces/results-context-interface';
+import ResultsContextInterface from '@/application/interfaces/results-context-interface';
 import { ReactNode, createContext, useState } from 'react';
 
 export const ResultsContext = createContext({} as ResultsContextInterface);

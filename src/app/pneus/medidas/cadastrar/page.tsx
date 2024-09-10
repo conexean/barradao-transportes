@@ -1,38 +1,12 @@
-import Section from '@/components/section';
-import BreadcrumbInterface from '@/interfaces/breadcrumb-interface';
-import Breadcrumb from '@/components/breadcrumb';
-import FormCreateMeasure from '@/components/forms/form-create-measure';
-import createMeasure from '@/actions/measure/createMeasure';
+import Maintenance from '@/ui/components/maintenance';
+import PageLayout from '@/ui/layouts/page-layout';
 
-const CadastrarUsuario: React.FC = () => {
-  const breadcrumbProps: BreadcrumbInterface = {
-    title: 'Cadastrar medidas',
-    links: [
-      {
-        label: 'Medidas de pneu',
-        href: '/pneus/medidas',
-        active: false,
-      },
-      {
-        label: 'Cadastrar medidas',
-        href: '/pneus/medidas/cadastrar',
-        active: true,
-      },
-    ],
-  };
+const CadastraMedidaPage: React.FC = () => {
   return (
-    <>
-      <Section>
-        <Breadcrumb
-          title={breadcrumbProps.title}
-          links={breadcrumbProps.links}
-        />
-        <div>
-          <FormCreateMeasure action={createMeasure} />
-        </div>
-      </Section>
-    </>
+    <PageLayout title='Cadastrar medida de pneu'>
+      <Maintenance />
+    </PageLayout>
   );
 };
 
-export default CadastrarUsuario;
+export default CadastraMedidaPage;

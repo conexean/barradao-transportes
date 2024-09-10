@@ -1,4 +1,4 @@
-import FieldErrors from '@/interfaces/field-erros-interface';
+import FieldErrors from '@/application/interfaces/field-erros-interface';
 import { ZodIssue } from 'zod';
 
 const findErrors = (fieldName: string, errors: ZodIssue[]): FieldErrors => {

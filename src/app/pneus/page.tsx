@@ -1,32 +1,18 @@
-import Breadcrumb from '@/components/breadcrumb';
-import Button from '@/components/button';
-import BreadcrumbInterface from '@/interfaces/breadcrumb-interface';
-import Link from 'next/link';
+import Button from '@/ui/components/button';
+import Maintenance from '@/ui/components/maintenance';
+import PageLayout from '@/ui/layouts/page-layout';
 
-const Pneus: React.FC = () => {
-  const breadcrumbProps: BreadcrumbInterface = {
-    title: 'Pneus',
-    links: [
-      {
-        label: 'Pneus',
-        href: '/pneus',
-        active: true,
-      },
-    ],
-  };
-
+const PneusPage: React.FC = () => {
   return (
-    <>
-      <Breadcrumb title={breadcrumbProps.title} links={breadcrumbProps.links} />
-      <div className='flex items-center justify-end'>
-        <Link href={'/pneus/cadastrar'}>
-          <Button color='blue' type='button'>
-            Novo pneu
-          </Button>
-        </Link>
-      </div>
-    </>
+    <PageLayout
+      title='Pneus'
+      showBackButton={false}
+      showRegisterButton={true}
+      href='/pneus/cadastrar'
+    >
+      <Maintenance />
+    </PageLayout>
   );
 };
 
-export default Pneus;
+export default PneusPage;

@@ -1,4 +1,4 @@
-import { MeasureInterface } from '@/interfaces/models-interface/measure-interace';
+import { MeasureInterface } from '@/application/interfaces/models-interface/measure-interace';
 
 export interface IMeasure extends MeasureInterface {
   id: number;

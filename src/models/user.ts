@@ -1,4 +1,4 @@
-import { UserInterface } from '@/interfaces/models-interface/user-interface';
+import { UserInterface } from '@/application/interfaces/models-interface/user-interface';
 
 export interface IUser extends UserInterface {
   id: number;

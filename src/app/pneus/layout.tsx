@@ -1,6 +1,6 @@
 import { ModalProvider } from '@/context/modal-context';
 import { ResultsProvider } from '@/context/results-context';
-import DefaultLayout from '@/layouts/default-layout';
+import DefaultLayout from '@/ui/layouts/default-layout';
 
 export default function PenusLayout({
   children,
